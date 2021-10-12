@@ -95,4 +95,15 @@ function openChestSync(chestPath) {
    }
 }
 
-runMazeSync("./maze");
+switch (process.argv[2]) {
+   case "sync":
+      runMazeSync("./maze");
+      break;
+   case "callback":
+      runMaze("./maze");
+      break;
+   default:
+      console.log(
+         "please choose between: 'sync' and 'callback' \n\tnode mazeRunner.js [type]"
+      );
+}

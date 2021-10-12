@@ -5,8 +5,8 @@
    "type": "module",
    "main": "mazeRunner.js",
    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "node mazeRunner.js",
+      "sync": "node mazeRunner.js sync",
+      "callback": "node mazeRunner.js callback",
       "generate": "node mazeGenerator.js maze 5 3 5",
       "clean": "rm -rf ./maze"
    },
