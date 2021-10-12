@@ -1,0 +1,15 @@
+{
+   "name": "filemaze",
+   "version": "1.0.0",
+   "description": "",
+   "type": "module",
+   "main": "mazeRunner.js",
+   "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node mazeRunner.js",
+      "generate": "node mazeGenerator.js maze 5 3 5",
+      "clean": "rm -rf ./maze"
+   },
+   "author": "",
+   "license": "ISC"
+}
