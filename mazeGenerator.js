@@ -3,6 +3,13 @@ import path from "path";
 
 const [, , mazeName, maxWidth, startingDepth, length] = process.argv;
 
+/**
+ * mazeName - root diractory name
+ * maxWidth - biggest amount of sub-rooms in every room
+ * startingDepth - maze folder graph depth
+ * length - how many clues to the tresure
+ */
+
 let allRooms = [];
 
 function shuffleArray(array) {
