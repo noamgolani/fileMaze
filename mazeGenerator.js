@@ -33,9 +33,16 @@ function createClues(dir, rooms, depth) {
       content.next = rooms.pop();
       createClues(content.next, rooms, depth - 1);
    }
-   fs.writeFileSync(`${dir}/chest.json`, JSON.stringify(content));
+   fs.writeFileSync(`${dir}/chest-1.json`, JSON.stringify(content));
    if (Math.random() < 0.3)
-      fs.writeFileSync(`${dir}/chest.nosj`, "I`m a bad clue");
+      fs.writeFileSync(`${dir}/chest-2.nosj`, "I`m a bad clue");
+   if (Math.random() < 0.3)
+      fs.writeFileSync(
+         `${dir}/chest-3.json`,
+         JSON.stringify({
+            next: "./bad/file/path",
+         })
+      );
 }
 
 //gerarte the folders

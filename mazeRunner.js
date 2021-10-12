@@ -10,7 +10,8 @@ function runMaze(root) {
 
 function readMazeRoom(roomPath, callback) {
    fs.readdir(roomPath, (err, files) => {
-      if (err) return callback(new Error(`Cant read room: ${file}`));
+      if (err)
+         return callback(new Error(`Cant find the door to room: ${roomPath}`));
 
       const items = files;
       while (items.length > 0) {
