@@ -10,4 +10,4 @@
 
 - `clean` - removes the maze dir
 
-- `start` - cleans the old maze -> generates new maze -> runs your solution. Also can add the `-- -s` flag.
+- `start` - cleans the old maze -> generates new maze -> builds -> runs your solution. Also can add the `-- -s` flag.
