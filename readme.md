@@ -1,7 +1,13 @@
-`npm run generate` - creates a new random maze folder
+## npm scripts - run with `npm run <name>`
 
-`npm run clean` - removes the maze diractory (works on bash)
+- `build` - build the files to the `./build` directory
 
-`npm run sync` - runs the sync script
+- `watch` - builds and watchs for changes
 
-`npm run callback` - runs the callback script
+- `solve` - runs the solving functions for the maze. Add a `-- -s` for the sync solution.
+
+- `gen` - generates the maze folder.
+
+- `clean` - removes the maze dir
+
+- `start` - cleans the old maze -> generates new maze -> runs your solution. Also can add the `-- -s` flag.
