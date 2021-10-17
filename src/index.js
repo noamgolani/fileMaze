@@ -1,46 +1,27 @@
-/* eslint-disable no-unused-vars */
-// import path from "path";
-// import fs from "fs";
+import commander from 'commander';
+
 import generateMaze from './lib/mazeGenerator';
+import runMaze from './asyncRunner';
+import runMazeSync from './syncRunner';
 
-function runMaze(rootRoomPath) {
-  /**
-   * Replace me
-   */
-}
+const program = new commander.Command();
 
-function readMazeRoom(roomPath, callback) {
-  /**
-   * Reaplace me
-   */
-}
+program
+  .command('gen')
+  .description('generate your maze folder')
+  .option('-d,--dir <maze dir>')
+  .action((options) => {
+    generateMaze(options.dir, 5, 4, 10);
+  });
 
-function openChest(chestPath, callback) {
-  /**
-   * Replace me
-   */
-}
+program
+  .command('run')
+  .description('solve the maze')
+  .option('-e,--entry <entry file>')
+  .option('-s,--sync')
+  .action((options) => {
+    if (options.sync) runMazeSync(options.entry);
+    else runMaze(options.entry);
+  });
 
-function runMazeSync(rootRoomPath) {
-  /**
-   * Replace me
-   */
-}
-
-function readMazeRoomSync(roomPath) {
-  /**
-   * Replace me
-   */
-}
-
-function openChestSync(chestPath) {
-  /**
-   * Replace me
-   */
-}
-
-function createMaze() {
-  generateMaze('./maze', 5, 4, 10);
-}
-
-createMaze();
+program.parse(process.argv);
