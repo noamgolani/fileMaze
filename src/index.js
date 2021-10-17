@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
 // import path from "path";
 // import fs from "fs";
+import generateMaze from './lib/mazeGenerator';
 
 function runMaze(rootRoomPath) {
   /**
@@ -37,15 +39,8 @@ function openChestSync(chestPath) {
    */
 }
 
-switch (process.argv[2]) {
-  case 'sync':
-    runMazeSync('./maze');
-    break;
-  case 'callback':
-    runMaze('./maze');
-    break;
-  default:
-    console.log(
-      "please choose between: 'sync' and 'callback' \n\tnode mazeRunner.js [type]",
-    );
+function createMaze() {
+  generateMaze('./maze', 5, 4, 10);
 }
+
+createMaze();
