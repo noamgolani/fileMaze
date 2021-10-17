@@ -2,14 +2,18 @@
    "name": "filemaze",
    "version": "1.0.0",
    "description": "",
-   "type": "module",
    "main": "mazeRunner.js",
    "scripts": {
-      "sync": "node mazeRunner.js sync",
-      "callback": "node mazeRunner.js callback",
-      "generate": "node mazeGenerator.js maze 5 3 5",
-      "clean": "rm -rf ./maze"
+      "build": "webpack --mode development",
+      "watch": "npm run build -- --watch"
    },
    "author": "",
-   "license": "ISC"
+   "license": "ISC",
+   "dependencies": {
+      "commander": "^8.2.0",
+      "webpack": "^5.58.2"
+   },
+   "devDependencies": {
+      "webpack-cli": "^4.9.0"
+   }
 }
