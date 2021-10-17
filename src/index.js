@@ -1,5 +1,5 @@
-import path from "path";
-import fs from "fs";
+// import path from "path";
+// import fs from "fs";
 
 function runMaze(rootRoomPath) {
   /**
@@ -38,14 +38,14 @@ function openChestSync(chestPath) {
 }
 
 switch (process.argv[2]) {
-  case "sync":
-    runMazeSync("./maze");
+  case 'sync':
+    runMazeSync('./maze');
     break;
-  case "callback":
-    runMaze("./maze");
+  case 'callback':
+    runMaze('./maze');
     break;
   default:
     console.log(
-      "please choose between: 'sync' and 'callback' \n\tnode mazeRunner.js [type]"
+      "please choose between: 'sync' and 'callback' \n\tnode mazeRunner.js [type]",
     );
 }

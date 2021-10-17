@@ -1,4 +1,4 @@
-import fs from "fs";
+//import fs from "fs";
 
 const [, , mazeName, maxWidth, startingDepth, length] = process.argv;
 
