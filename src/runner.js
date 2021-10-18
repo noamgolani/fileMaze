@@ -34,7 +34,7 @@ async function readMazeRoom(roomPath) {
           if (chestContent === 'found') fs.appendFile(logFile,`Found: ${itemPath}\n`);
           await readMazeRoom(chestContent);
         }catch {
-          console.log("Problem reading chest");
+          return
         }
       }
     });
