@@ -1,6 +1,5 @@
 /* eslint-disable consistent-return */
-import fs from 'fs';
-import path from 'path';
+import axios from 'axios';
 
 function openChestSync(chestPath) {
   try {

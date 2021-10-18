@@ -1,9 +1,10 @@
-/* eslint-disable consistent-return */
-import fs from 'fs';
+import axios from 'axios';
 import path from 'path';
 
+const URL = 'http://localhost:5000';
+
 function openChest(chestPath, callback) {
-  fs.readFile(chestPath, (err, content) => {
+  axios.get(`${URL}/chest?dir=${chestPath}`, (err, content) => {
     if (err) return callback(new Error(`Cant open chest: ${chestPath}`));
     console.log(`Opening chest: ${chestPath}`);
     try {
@@ -18,7 +19,7 @@ function openChest(chestPath, callback) {
 }
 
 function readMazeRoom(roomPath, callback) {
-  fs.readdir(roomPath, (err, files) => {
+  axios.get(`${URL}/room?dir=${roomPath}`, (err, files) => {
     if (err) {
       return callback(new Error(`Cant find the door to room: ${roomPath}`));
     }
@@ -28,7 +29,7 @@ function readMazeRoom(roomPath, callback) {
       const item = items.pop();
       const itemPath = path.join(roomPath, item);
 
-      fs.lstat(itemPath, (e, stat) => {
+      axios.get(`${URL}/stat?dir=${itemPath}`, (e, stat) => {
         if (!e && stat.isFile()) {
           openChest(itemPath, (error, chestContent) => {
             if (error) return callback(error);
