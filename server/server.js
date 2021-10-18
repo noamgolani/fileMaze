@@ -1,5 +1,5 @@
-const http = require('http');
-const router = require('./router');
+import http from 'http';
+import {handleRequest} from './router.js'
 
 const hostname = '127.0.0.1';
 const port = 5000;
@@ -30,7 +30,7 @@ http
         body = Buffer.concat(body).toJSON().data;
         req.body = body;
         req.query = parseQuery(req);
-        router.handleRequest(req, res);
+        handleRequest(req, res);
       });
   })
   .listen(5000, () => {

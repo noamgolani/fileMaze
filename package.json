@@ -3,11 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "mazeRunner.js",
+  "type": "module",
   "scripts": {
-    "build": "webpack --mode development",
-    "watch": "npm run build -- --watch",
-    "clean": "rm -rf ./maze",
-    "start": "npm run watch  & ttab nodemon ./server/server.js"
+    "startServer": "nodemon ./server/server.js",
+    "start": "node ./src/index.js run -e ./maze"
   },
   "author": "",
   "license": "ISC",
