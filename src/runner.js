@@ -3,13 +3,13 @@ import axios from 'axios';
 import fs from 'fs/promises';
 import path from 'path';
 
-const URL = 'http://localhost:5000';
+axios.defaults.baseURL = 'http://localhost:5000';
 
 const logFile = 'dat.log';
 
 async function openChest(chestPath) {
   try {
-    const response = await axios.get(`${URL}/chest?dir=${chestPath}`);
+    const response = await axios.get(`/chest?dir=${chestPath}`);
     const jsonContent = response.data;
     if (jsonContent.treasure) return 'found';
     if (jsonContent.next) return jsonContent.next;
@@ -20,13 +20,13 @@ async function openChest(chestPath) {
 
 async function readMazeRoom(roomPath) {
   try {
-    const response = await axios.get(`${URL}/room?dir=${roomPath}`);
+    const response = await axios.get(`/room?dir=${roomPath}`);
     fs.appendFile(logFile,`Entered: ${roomPath}\n`);
     const items = response.data;
 
     items.forEach(async (item) => {
       const itemPath = path.join(roomPath, item);
-      const response = await axios.get(`${URL}/stat?dir=${itemPath}`);
+      const response = await axios.get(`/stat?dir=${itemPath}`);
       const stat = response.data;
       if (stat.isFile) {
         try{
