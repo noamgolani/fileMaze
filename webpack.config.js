@@ -1,19 +1,19 @@
-const path = require("path");
-const ESLintPlugin = require("eslint-webpack-plugin");
+const path = require('path');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: './src/index.js',
   output: {
-    filename: "runner.js",
-    path: path.resolve(__dirname, "build"),
+    filename: 'runner.js',
+    path: path.resolve(__dirname, 'build'),
   },
-  target: "node",
+  target: 'node',
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel-loader",
+        loader: 'babel-loader',
       },
     ],
   },
