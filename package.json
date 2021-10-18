@@ -6,10 +6,9 @@
   "scripts": {
     "build": "webpack --mode development",
     "watch": "npm run build -- --watch",
-    "solve": "node ./build/runner.js run -e ./maze ",
     "gen": "node ./build/runner.js gen -d ./maze",
     "clean": "rm -rf ./maze",
-    "start": "npm run clean && npm run gen && npm run build && npm run solve --"
+    "start": "npm run build & webpack-dev-server --open --mode development & ttab node ./server/server.js"
   },
   "author": "",
   "license": "ISC",
@@ -25,6 +24,7 @@
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.25.2",
     "eslint-webpack-plugin": "^3.0.1",
+    "ttab": "^0.7.1",
     "webpack-cli": "^4.9.0"
   }
 }

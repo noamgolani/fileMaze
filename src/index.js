@@ -1,7 +1,7 @@
 import commander from 'commander';
 
 import generateMaze from './lib/mazeGenerator';
-import runMaze from './asyncRunner';
+import runMaze from './client/asyncRunner';
 import runMazeSync from './syncRunner';
 
 const program = new commander.Command();
