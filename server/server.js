@@ -4,6 +4,17 @@ const router = require('./router');
 const hostname = '127.0.0.1';
 const port = 5000;
 
+function parseQuery(req) {
+  const queryString = req.url.split('?')[1];
+  if (!queryString) return {};
+  const query = {};
+  queryString.split('&').forEach((str) => {
+    const spl = str.split('=');
+    query[spl[0]] = spl[1];
+  });
+  return query;
+}
+
 http
   .createServer((req, res) => {
     let body = [];
@@ -18,6 +29,7 @@ http
       .on('end', () => {
         body = Buffer.concat(body).toJSON().data;
         req.body = body;
+        req.query = parseQuery(req);
         router.handleRequest(req, res);
       });
   })
