@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { goodRes, badRes } from '../lib/helpers';
+import { goodRes, badRes } from '../lib/helpers.js';
 
 export default async function roomHandler(req, res) {
   const { query } = req;

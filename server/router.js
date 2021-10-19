@@ -1,7 +1,16 @@
-import roomHandler from './handlers/room';
-import statHandler from './handlers/stat';
-import chestHandler from './handlers/chest';
-import mazeHandler from './handlers/maze';
+import roomHandler from './handlers/room.js';
+import statHandler from './handlers/stat.js';
+import chestHandler from './handlers/chest.js';
+import mazeHandler from './handlers/maze.js';
+import { notFound } from './lib/helpers.js';
+
+const handlersMap = {
+  room: roomHandler,
+  chest: chestHandler,
+  stat: statHandler,
+  maze: mazeHandler,
+  404: notFound,
+};
 
 export default function handleRequest(req, res) {
   const { method, url, body } = req;
@@ -10,25 +19,8 @@ export default function handleRequest(req, res) {
   );
 
   const withoutQuery = url.split('?')[0];
-  // TODO change to map
-  switch (withoutQuery.split('/')[1]) {
-    case 'room':
-      roomHandler(req, res);
-      break;
-    case 'chest':
-      chestHandler(req, res);
-      break;
-    case 'stat':
-      statHandler(req, res);
-      break;
-    case 'maze':
-      mazeHandler(req, res);
-      break;
-    default:
-      res.writeHead(404, 'Page not found', {
-        'content-type': 'application/json',
-      });
-      res.end();
-      break;
-  }
-};
+  const route = withoutQuery.split('/')[1];
+  const handler = handlersMap[route] ? handlersMap[route] : handlersMap['404'];
+
+  handler(req, res);
+}

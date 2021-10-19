@@ -1,5 +1,5 @@
 import http from 'http';
-import {handleRequest} from './router.js'
+import handleRequest from './router.js';
 
 const hostname = '127.0.0.1';
 const port = 5000;
