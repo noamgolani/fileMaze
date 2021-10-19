@@ -1,5 +1,6 @@
 import http from 'http';
 import { URLSearchParams } from 'url';
+import { logError } from './lib/logger.js';
 import handleRequest from './router.js';
 
 const hostname = '127.0.0.1';
@@ -11,7 +12,7 @@ http
 
     req
       .on('error', (err) => {
-        console.error(err);
+        logError(err);
       })
       .on('data', (chunk) => {
         body.push(chunk);
