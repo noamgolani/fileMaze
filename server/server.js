@@ -5,17 +5,6 @@ import handleRequest from './router.js';
 const hostname = '127.0.0.1';
 const port = 5000;
 
-function parseQuery(req) {
-  const queryString = req.url.split('?')[1];
-  if (!queryString) return {};
-  const query = {};
-  queryString.split('&').forEach((str) => {
-    const spl = str.split('=');
-    query[spl[0]] = spl[1];
-  });
-  return query;
-}
-
 http
   .createServer((req, res) => {
     let body = [];
@@ -39,5 +28,6 @@ http
       });
   })
   .listen(5000, () => {
+    // eslint-disable-next-line no-console
     console.log(`Running on http://${hostname}:${port}...`);
   });

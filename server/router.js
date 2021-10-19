@@ -4,6 +4,8 @@ import chestHandler from './handlers/chest.js';
 import mazeHandler from './handlers/maze.js';
 import { notFound } from './lib/helpers.js';
 
+import { logReq, logRes } from './lib/logger.js';
+
 const handlersMap = {
   room: roomHandler,
   chest: chestHandler,
@@ -13,12 +15,12 @@ const handlersMap = {
 };
 
 export default function handleRequest(req, res) {
-  const { method, url, body } = req;
-  console.log(`${method} Request to - ${url} \n\t ${JSON.stringify(body)}`);
-
-  const withoutQuery = url.split('?')[0];
+  logReq(req);
+  const withoutQuery = req.url.split('?')[0];
   const route = withoutQuery.split('/')[1];
   const handler = handlersMap[route] ? handlersMap[route] : handlersMap['404'];
 
-  handler(req, res);
+  handler(req, res).then((response) => {
+    logRes(response);
+  });
 }

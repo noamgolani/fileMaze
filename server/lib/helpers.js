@@ -4,15 +4,16 @@ export function goodRes(res, data) {
   });
   res.write(JSON.stringify(data));
   res.end();
+  return res;
 }
 
 export function badRes(res, err) {
-  console.log(err);
   res.writeHead(400, err.message, {
     'content-type': 'application/json',
   });
   res.write(JSON.stringify(err));
   res.end();
+  return res;
 }
 
 export function notFound(req, res) {
@@ -20,4 +21,5 @@ export function notFound(req, res) {
     'content-type': 'application/json',
   });
   res.end();
+  return res;
 }

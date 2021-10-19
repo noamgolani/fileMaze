@@ -34,13 +34,10 @@ export default async function mazeHandler(req, res) {
 
   switch (method) {
     case 'POST':
-      postMaze(req, res);
-      break;
+      return postMaze(req, res);
     case 'DELETE':
-      deleteMaze(req, res);
-      break;
+      return deleteMaze(req, res);
     default:
-      notFound(req, res);
-      break;
+      return notFound(req, res);
   }
 }
