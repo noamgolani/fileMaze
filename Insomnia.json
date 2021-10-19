@@ -1,0 +1,202 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2021-10-19T16:36:30.159Z",
+  "__export_source": "insomnia.desktop.app:v2021.5.3",
+  "resources": [
+    {
+      "_id": "req_61b65fadf5f7434786b873f7a6ed8be7",
+      "parentId": "wrk_98e50ca9da6144eca56afcaeb68fbabc",
+      "modified": 1634659823773,
+      "created": 1634659658459,
+      "url": "{{ _.baseUrl }}/chest",
+      "name": "open chest",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "id": "pair_108e4f095946437582f31e539b05acd5",
+          "name": "dir",
+          "value": "chest-1.jso",
+          "description": ""
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1634659658459,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "wrk_98e50ca9da6144eca56afcaeb68fbabc",
+      "parentId": null,
+      "modified": 1634656448425,
+      "created": 1634656448425,
+      "name": "File Maze",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_f11f37161a5a4412adc3605d23384490",
+      "parentId": "wrk_98e50ca9da6144eca56afcaeb68fbabc",
+      "modified": 1634659618299,
+      "created": 1634659501441,
+      "url": "{{ _.baseUrl }}/stat",
+      "name": "get stat",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "id": "pair_c04f5460271d4528b8ae781b90ed114d",
+          "name": "dir",
+          "value": "/chest-a",
+          "description": ""
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1634659501441,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_57aef0a6b4cd4207bc677bc0cb16ede5",
+      "parentId": "wrk_98e50ca9da6144eca56afcaeb68fbabc",
+      "modified": 1634659460426,
+      "created": 1634657878074,
+      "url": "{{baseUrl}}/room",
+      "name": "get dir",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "id": "pair_0e79efb560dd438da1b006151772dd07",
+          "name": "dir",
+          "value": "/",
+          "description": "",
+          "disabled": false
+        },
+        {
+          "id": "pair_2c5603068921467eb07cbd3737f4654c",
+          "name": "",
+          "value": "",
+          "description": ""
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1634657878074,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_732acf8b928d4ede85826ba60a3a5044",
+      "parentId": "wrk_98e50ca9da6144eca56afcaeb68fbabc",
+      "modified": 1634657390926,
+      "created": 1634656629218,
+      "url": "{{ _.baseUrl }}/maze",
+      "name": "create maze",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"length\":\"10\",\n\t\"width\":\"4\",\n\t\"depth\":\"5\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_5659ee7fdd7440a18d50f173f48dc204"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1634656629218,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_5178e82230da4b018b94e9daf7b23315",
+      "parentId": "wrk_98e50ca9da6144eca56afcaeb68fbabc",
+      "modified": 1634656579452,
+      "created": 1634656483999,
+      "url": "{{ _.baseUrl }}/maze",
+      "name": "delete maze",
+      "description": "",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1634656483999,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_35cfd4e659f867494c5d568bf875a75a775cde18",
+      "parentId": "wrk_98e50ca9da6144eca56afcaeb68fbabc",
+      "modified": 1634656547214,
+      "created": 1634656448436,
+      "name": "Base Environment",
+      "data": { "baseUrl": "http://localhost:5000" },
+      "dataPropertyOrder": { "&": ["baseUrl"] },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1634656448436,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_35cfd4e659f867494c5d568bf875a75a775cde18",
+      "parentId": "wrk_98e50ca9da6144eca56afcaeb68fbabc",
+      "modified": 1634656448440,
+      "created": 1634656448440,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_cff437b60f0d468180518c9ce8bd68b7",
+      "parentId": "wrk_98e50ca9da6144eca56afcaeb68fbabc",
+      "modified": 1634656448427,
+      "created": 1634656448427,
+      "fileName": "File Maze",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    }
+  ]
+}

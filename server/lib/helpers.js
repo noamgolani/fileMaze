@@ -1,3 +1,4 @@
+// TODO add a serverError with code 500 and no details to res
 export function goodRes(res, data) {
   res.writeHead(200, 'Correct', {
     'content-type': 'application/json',
