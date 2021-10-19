@@ -1,4 +1,5 @@
 import http from 'http';
+import { URLSearchParams } from 'url';
 import handleRequest from './router.js';
 
 const hostname = '127.0.0.1';
@@ -33,7 +34,7 @@ http
         } catch {
           req.body = {};
         }
-        req.query = parseQuery(req);
+        req.query = new URLSearchParams(req.url.split('?')[1]);
         handleRequest(req, res);
       });
   })

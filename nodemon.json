@@ -1,0 +1,4 @@
+{
+  "verbuse":true,
+  "ignore":["./maze","README.md"]
+}

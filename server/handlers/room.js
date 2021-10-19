@@ -1,13 +1,17 @@
-import fs from 'fs';
+import fs from 'fs/promises';
+import path from 'path';
 import { goodRes, badRes } from '../lib/helpers.js';
 
 export default async function roomHandler(req, res) {
-  const { query } = req;
+  const dir = req.query.get('dir');
+
+  if (!dir) return badRes(res, 'Must provide a dir');
 
   try {
-    const dirData = await fs.readdir(`${query.dir}`);
-    goodRes(res, dirData);
+    // TODO fix big securety problem
+    const dirData = await fs.readdir(path.join(path.resolve('./maze'), dir));
+    return goodRes(res, dirData);
   } catch (err) {
-    badRes(res, err);
+    return badRes(res, err.message);
   }
 }

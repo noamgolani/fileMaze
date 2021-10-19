@@ -11,9 +11,9 @@ async function postMaze(req, res) {
 
   try {
     await generateMaze('./maze', width, depth, length);
-    goodRes(res, 'good params');
+    return goodRes(res, 'good params');
   } catch (err) {
-    badRes(res, err.message);
+    return badRes(res, err.message);
   }
 }
 
