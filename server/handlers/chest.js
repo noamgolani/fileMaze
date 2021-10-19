@@ -1,13 +1,17 @@
-import fs from 'fs';
+import fs from 'fs/promises';
+import path from 'path';
 import { goodRes, badRes } from '../lib/helpers.js';
 
 export default async function chestHandler(req, res) {
-  const { query } = req;
+  const dir = req.query.get('dir');
+
+  if (!dir) return badRes(res, 'Must provide a dir');
 
   try {
-    const fileData = await fs.readFile(query.dir);
-    goodRes(res, JSON.parse(fileData.toString()));
+    // TODO file system security
+    const fileData = await fs.readFile(path.join(path.resolve('./maze'), dir));
+    return goodRes(res, JSON.parse(fileData.toString()));
   } catch (err) {
-    badRes(res, err);
+    return badRes(res, err.message);
   }
 }
