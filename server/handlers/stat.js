@@ -1,14 +1,15 @@
 import fs from 'fs/promises';
+import path from 'path';
 import { goodRes, badRes } from '../lib/helpers.js';
 
 export default async function statHandler(req, res) {
-  const { query } = req;
+  const dir = req.query.get('dir');
 
-  if (!query.dir) return badRes(res, 'Must provide a dir query');
-  console.log(query.dir);
+  if (!dir) return badRes(res, 'Must provide a dir query');
 
   try {
-    const statData = await fs.lstat(query.dir);
+    // TODO fix path security problems
+    const statData = await fs.lstat(path.join(path.resolve('./maze'), dir));
     statData.isFile = statData.isFile();
     return goodRes(res, statData);
   } catch (err) {
