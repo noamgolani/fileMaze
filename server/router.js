@@ -14,9 +14,7 @@ const handlersMap = {
 
 export default function handleRequest(req, res) {
   const { method, url, body } = req;
-  console.log(
-    `${method} Request to - ${url} \n\t Body: ${JSON.stringify(body)}`,
-  );
+  console.log(`${method} Request to - ${url} \n\t ${JSON.stringify(body)}`);
 
   const withoutQuery = url.split('?')[0];
   const route = withoutQuery.split('/')[1];

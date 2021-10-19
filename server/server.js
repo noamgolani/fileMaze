@@ -27,8 +27,12 @@ http
         body.push(chunk);
       })
       .on('end', () => {
-        body = Buffer.concat(body).toJSON().data;
-        req.body = body;
+        try {
+          body = JSON.parse(Buffer.concat(body).toString());
+          req.body = body;
+        } catch {
+          req.body = {};
+        }
         req.query = parseQuery(req);
         handleRequest(req, res);
       });
