@@ -31,50 +31,67 @@ async function openChest(chestPath) {
     const response = await axios.get(`/chest?dir=${chestPath}`);
     logger.log(`Opened chest: ${chestPath}`);
     const { treasure, next } = response.data;
-    if (treasure) return [true, { path: chestPath, content: treasure }];
-    if (next) return [false, { next }];
+    if (treasure) {
+      return { found: true, content: { path: chestPath, content: treasure } };
+    }
+    if (next) return { found: false, content: { next } };
   } catch (err) {
     throw new Error(`Cant open chest: ${chestPath}`);
   }
 }
 
 async function readMazeRoom(roomPath) {
-  try {
-    const response = await axios.get(`/room?dir=${roomPath}`);
-    logger.log(`Entered: ${roomPath}`);
-    const filesOrDir = response.data.map((item) => path.join(roomPath, item));
+  const response = await axios.get(`/room?dir=${roomPath}`);
+  logger.log(`Entered: ${roomPath}`);
+  const filesOrDir = response.data.map((item) => path.join(roomPath, item));
 
-    const resList = await Promise.all(
-      filesOrDir.map(async (itemPath) => {
+  const resList = await Promise.all(
+    filesOrDir.map(async (itemPath) => {
+      try {
         const {
           data: { isFile },
         } = await axios.get(`/stat?dir=${itemPath}`);
         if (isFile) return [true, itemPath];
         return [false, itemPath];
-      }),
-    );
+      } catch (err) {
+        logger.logError(err);
+      }
+    }),
+  );
 
-    const chestPaths = resList.filter((res) => res[0]).map((res) => res[1]);
-    chestPaths.forEach(async (chestPath) => {
-      const [found, content] = await openChest(chestPath);
-      if (found)
-        return logger.log(`Found: ${content.content} at: ${content.path}`);
-      console.log(content.next);
-      await readMazeRoom(content.next);
-    });
-  } catch (err) {
-    logger.logError(err);
-    throw Error(`Cant find the door to room: ${roomPath}`);
-  }
+  const chestPaths = resList.filter((res) => res[0]).map((res) => res[1]);
+  const chestContList = await Promise.all(
+    chestPaths.map(async (chestPath) => {
+      try {
+        return await openChest(chestPath);
+      } catch (err) {
+        logger.logError(err);
+      }
+    }),
+  );
+
+  await Promise.all(
+    chestContList
+      .filter((content) => content) // removes undefines from array
+      .map(async ({ found, content }) => {
+        try {
+          if (found)
+            return logger.log(`Found: ${content.content} at: ${content.path}`);
+          await readMazeRoom(content.next);
+        } catch (err) {
+          logger.logError(err);
+        }
+      }),
+  );
 }
 
 export default function runMaze() {
   console.log('--- Running Async ---');
-  try {
-    readMazeRoom('/').then(() => {
+  readMazeRoom('/')
+    .then(() => {
       console.log('Read dat.log');
+    })
+    .catch((err) => {
+      logger.logError(err);
     });
-  } catch (err) {
-    console.log(err);
-  }
 }
