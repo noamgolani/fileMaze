@@ -86,12 +86,12 @@ async function readMazeRoom(roomPath) {
 }
 
 export default function runMaze() {
-  console.log('--- Running Async ---');
   readMazeRoom('/')
     .then(() => {
-      console.log('Read dat.log');
+      console.log(`Done! your logs are in: ${path.resolve(logger.baseDir)}`);
     })
     .catch((err) => {
       logger.logError(err);
+      console.log(`Cant find a treasur! your logs are in: ${logger.baseDir}`);
     });
 }
