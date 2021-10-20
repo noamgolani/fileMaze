@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "startServer": "nodemon ./server/server.js",
-    "start": "rm dat.log || true && node ./src/index.js run -e ./maze"
+    "start": "node ./src/index.js run"
   },
   "author": "",
   "license": "ISC",
