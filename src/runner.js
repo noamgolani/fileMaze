@@ -45,6 +45,7 @@ async function readMazeRoom(roomPath) {
   logger.log(`Entered: ${roomPath}`);
   const filesOrDir = response.data.map((item) => path.join(roomPath, item));
 
+  // Get stats on all the room's items
   const resList = await Promise.all(
     filesOrDir.map(async (itemPath) => {
       try {
@@ -59,6 +60,7 @@ async function readMazeRoom(roomPath) {
     }),
   );
 
+  // Open all the files in the room
   const chestPaths = resList.filter((res) => res[0]).map((res) => res[1]);
   const chestContList = await Promise.all(
     chestPaths.map(async (chestPath) => {
@@ -70,6 +72,7 @@ async function readMazeRoom(roomPath) {
     }),
   );
 
+  // Process every good chest
   await Promise.all(
     chestContList
       .filter((content) => content) // removes undefines from array
