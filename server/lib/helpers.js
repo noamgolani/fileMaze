@@ -9,6 +9,7 @@ export function goodRes(res, data) {
 }
 
 export function badRes(res, err) {
+  console.log(err);
   res.writeHead(400, err.message, {
     'content-type': 'application/json',
   });

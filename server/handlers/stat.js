@@ -3,9 +3,10 @@ import path from 'path';
 import { goodRes, badRes } from '../lib/helpers.js';
 
 export default async function statHandler(req, res) {
-  const dir = req.query.get('dir');
+  let dir = req.query.get('dir');
 
   if (!dir) return badRes(res, 'Must provide a dir query');
+  dir = dir.replace('maze', ''); // removes relative to maze dir
 
   try {
     // TODO fix path security problems

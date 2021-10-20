@@ -1,1 +1,25 @@
-Entered: //nOpened chest: /chest-1.json/nEntered: //nEntered: //nEntered: //nEntered: //nEntered: //nEntered: //n
+Entered: /
+Opened chest: /chest-1.json
+Entered: ./maze/room-1/room-0/room-0
+Opened chest: maze/room-1/room-0/room-0/chest-1.json
+Entered: ./maze/room-3/room-0/room-1/room-0
+Opened chest: maze/room-3/room-0/room-1/room-0/chest-1.json
+Entered: ./maze/room-3/room-0/room-2/room-0
+Opened chest: maze/room-3/room-0/room-2/room-0/chest-1.json
+Opened chest: maze/room-3/room-0/room-2/room-0/chest-3.json
+Entered: ./maze/room-0/room-1/room-0/room-1
+Opened chest: maze/room-0/room-1/room-0/room-1/chest-1.json
+Entered: ./maze/room-2/room-0/room-3
+Opened chest: maze/room-2/room-0/room-3/chest-1.json
+Entered: ./maze/room-2/room-0/room-2/room-3
+Opened chest: maze/room-2/room-0/room-2/room-3/chest-1.json
+Entered: ./maze/room-2/room-0/room-1
+Opened chest: maze/room-2/room-0/room-1/chest-1.json
+Opened chest: maze/room-2/room-0/room-1/chest-3.json
+Entered: ./maze/room-2/room-0/room-0/room-0
+Opened chest: maze/room-2/room-0/room-0/room-0/chest-1.json
+Entered: ./maze/room-0/room-1
+Opened chest: maze/room-0/room-1/chest-1.json
+Entered: ./maze/room-0/room-1/room-0/room-0
+Opened chest: maze/room-0/room-1/room-0/room-0/chest-1.json
+Found: true at: maze/room-0/room-1/room-0/room-0/chest-1.json
