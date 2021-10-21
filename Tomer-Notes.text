@@ -5,7 +5,7 @@ To be more general, there is no point in waiting for a promise to resolve just t
 The backend should return only chests
 I.E. files. The directory filtering logic should happen on the backend.
 
-// TODO const chestPaths = resList.filter((res) => res[0]).map((res) => res[1]); is incoherent. what does resList hold? what do you filter? try better naming and variable structure.
+const chestPaths = resList.filter((res) => res[0]).map((res) => res[1]); is incoherent. what does resList hold? what do you filter? try better naming and variable structure.
 // TODO Try using Promise.allSettled()
 // TODO You might want to use a logging package instead of writing your own class
 // TODO The recursion can use some polish
