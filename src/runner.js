@@ -62,29 +62,22 @@ async function readMazeRoom(roomPath) {
 
   // Open all the files in the room
   const chestPaths = resList.filter((res) => res[0]).map((res) => res[1]);
-  const chestContList = await Promise.all(
-    chestPaths.map(async (chestPath) => {
+  const chestContList = await Promise.allSettled(chestPaths.map(openChest));
+  // return { status: fulfilled/rejected , value: {} }
+
+  // Process every good chest
+  await Promise.all(
+    chestContList.map(async ({ status, value }) => {
+      if (status === 'rejected') return logger.logError(value);
+      const { found, content } = value;
       try {
-        return await openChest(chestPath);
+        if (found)
+          return logger.log(`Found: ${content.content} at: ${content.path}`);
+        await readMazeRoom(content.next);
       } catch (err) {
         logger.logError(err);
       }
     }),
-  );
-
-  // Process every good chest
-  await Promise.all(
-    chestContList
-      .filter((content) => content) // removes undefines from array
-      .map(async ({ found, content }) => {
-        try {
-          if (found)
-            return logger.log(`Found: ${content.content} at: ${content.path}`);
-          await readMazeRoom(content.next);
-        } catch (err) {
-          logger.logError(err);
-        }
-      }),
   );
 }
 

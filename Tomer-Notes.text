@@ -1,0 +1,10 @@
+// TODO No need declaring a function as async if all it does is return a promise:
+async function promised() { return await p } is exactly the same as function promised() { return p } IFF p is a Promise.
+To be more general, there is no point in waiting for a promise to resolve just to return it, as the caller will need to wait on it also.
+
+// TODO The backend should return only chests, I.E. files. The directory filtering logic should happen on the backend.
+// TODO const chestPaths = resList.filter((res) => res[0]).map((res) => res[1]); is incoherent. what does resList hold? what do you filter? try better naming and variable structure.
+// TODO Try using Promise.allSettled()
+// TODO You might want to use a logging package instead of writing your own class
+// TODO The recursion can use some polish
+// TODO Error handling and interface can be more concise. Use status codes for indicating different problems.
