@@ -56,13 +56,15 @@ async function readMazeRoom(roomPath) {
     })
     .map(({ value }) => value);
 
-  await Promise.all(
-    chestsContent.map(({ found, content }) => {
-      if (found)
-        return logger.log(`Found: ${content.content} at: ${content.path}`);
-      readMazeRoom(content.next).catch((err) => logger.logError(err));
-    }),
-  );
+  const foundContent = chestsContent.filter(({ found }) => found)[0];
+  if (foundContent)
+    return logger.log(
+      `Found: ${foundContent.content.content} at: ${foundContent.content.path}`,
+    );
+
+  chestsContent.forEach(({ content: { next } }) => {
+    readMazeRoom(next).catch((err) => logger.logError(err));
+  });
 }
 
 export default function runMaze() {
