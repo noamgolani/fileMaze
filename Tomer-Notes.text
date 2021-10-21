@@ -12,5 +12,5 @@ You might want to use a logging package instead of writing your own class
 
 The recursion can use some polish
 
-// TODO Error handling and interface can be more concise.
+Error handling and interface can be more concise.
   Use status codes for indicating different problems.
