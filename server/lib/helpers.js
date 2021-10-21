@@ -1,4 +1,3 @@
-// TODO add a serverError with code 500 and no details to res
 export function goodRes(res, data) {
   res.writeHead(200, 'Correct', {
     'content-type': 'application/json',
@@ -8,9 +7,8 @@ export function goodRes(res, data) {
   return res;
 }
 
-export function badRes(res, err) {
-  console.log(err);
-  res.writeHead(400, err.message, {
+export function badRes(res, status, err) {
+  res.writeHead(status, err.message, {
     'content-type': 'application/json',
   });
   res.write(JSON.stringify(err));

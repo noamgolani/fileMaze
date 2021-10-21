@@ -4,16 +4,27 @@ import generateMaze from '../lib/mazeGenerator.js';
 
 async function postMaze(req, res) {
   const { length, width, depth } = req.body;
-  if (!width || typeof +width !== 'number') return badRes(res, 'Bad Width');
-  if (!depth || typeof +depth !== 'number') return badRes(res, 'Bad Depth');
+  const error = [];
+  if (!width || typeof +width !== 'number') error.push('Bad Width');
+  if (!depth || typeof +depth !== 'number') error.push('Bad Depth');
   if (!length || typeof +length !== 'number' || +length > +width * +depth)
-    return badRes(res, 'Bad Length');
+    error.push('Bad Length');
+
+  if (error.length > 0)
+    return badRes(res, 400, {
+      message: 'Bad Request',
+      reasons: error,
+    });
 
   try {
     await generateMaze('./maze', width, depth, length);
     return goodRes(res, 'good params');
   } catch (err) {
-    return badRes(res, err.message);
+    console.log(err);
+    return badRes(res, 500, {
+      message: 'Internal Server Error',
+      reason: err.message,
+    });
   }
 }
 
@@ -25,7 +36,8 @@ async function deleteMaze(req, res) {
     });
     goodRes(res, 'Succesfully deleted');
   } catch (err) {
-    badRes(res, err.message);
+    console.log(err);
+    badRes(res, 500, { message: 'Internal Server Error', reason: err.message });
   }
 }
 
