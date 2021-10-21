@@ -37,7 +37,7 @@ async function readMazeRoom(roomPath) {
   const chestsContent = (await Promise.allSettled(files.map(openChest)))
     .filter((promiseReturn) => {
       if (promiseReturn.status === 'rejected') {
-        logger.error(promiseReturn.reason);
+        logger.error(promiseReturn.reason.message);
         return false;
       }
       return true;
@@ -51,7 +51,11 @@ async function readMazeRoom(roomPath) {
     );
 
   chestsContent.forEach(({ content: { next } }) => {
-    readMazeRoom(next).catch((err) => logger.error(err));
+    readMazeRoom(next).catch((err) => {
+      if (err.response)
+        logger.error(`${err.response.status}: ${err.response.data.reason}`);
+      else logger.error(err);
+    });
   });
 }
 

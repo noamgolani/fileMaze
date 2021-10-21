@@ -1,119 +1,29 @@
-[1634807696297] [32mINFO[39m (33562 on ubuntu): [36mEntered: /[39m
-[1634807696301] [32mINFO[39m (33562 on ubuntu): [36mOpened chest: /chest-1.json[39m
-[1634807696312] [32mINFO[39m (33562 on ubuntu): [36mEntered: ./maze/room-1/room-0/room-0[39m
-[1634807696320] [32mINFO[39m (33562 on ubuntu): [36mOpened chest: maze/room-1/room-0/room-0/chest-1.json[39m
-[1634807696322] [31mERROR[39m (33562 on ubuntu): [36mCant open chest: maze/room-1/room-0/room-0/chest-2.nosj[39m
-    err: {
-      "type": "Error",
-      "message": "Cant open chest: maze/room-1/room-0/room-0/chest-2.nosj",
-      "stack":
-          Error: Cant open chest: maze/room-1/room-0/room-0/chest-2.nosj
-              at openChest (file:///home/noamgolani/cb4s/fileMaze/src/runner.js:27:11)
-              at processTicksAndRejections (internal/process/task_queues.js:95:5)
-    }
-[1634807696331] [32mINFO[39m (33562 on ubuntu): [36mEntered: ./maze/room-3/room-0/room-1/room-0[39m
-[1634807696338] [32mINFO[39m (33562 on ubuntu): [36mOpened chest: maze/room-3/room-0/room-1/room-0/chest-1.json[39m
-[1634807696344] [32mINFO[39m (33562 on ubuntu): [36mEntered: ./maze/room-3/room-0/room-2/room-0[39m
-[1634807696356] [32mINFO[39m (33562 on ubuntu): [36mOpened chest: maze/room-3/room-0/room-2/room-0/chest-1.json[39m
-[1634807696357] [32mINFO[39m (33562 on ubuntu): [36mOpened chest: maze/room-3/room-0/room-2/room-0/chest-3.json[39m
-[1634807696370] [31mERROR[39m (33562 on ubuntu): [36mRequest failed with status code 404[39m
-    err: {
-      "message": "Request failed with status code 404",
-      "stack":
-          Error: Request failed with status code 404
-              at createError (/home/noamgolani/cb4s/fileMaze/node_modules/axios/lib/core/createError.js:16:15)
-              at settle (/home/noamgolani/cb4s/fileMaze/node_modules/axios/lib/core/settle.js:17:12)
-              at IncomingMessage.handleStreamEnd (/home/noamgolani/cb4s/fileMaze/node_modules/axios/lib/adapters/http.js:293:11)
-              at IncomingMessage.emit (events.js:412:35)
-              at endReadableNT (internal/streams/readable.js:1334:12)
-              at processTicksAndRejections (internal/process/task_queues.js:82:21)
-      "config": {
-        "transitional": {
-          "silentJSONParsing": true,
-          "forcedJSONParsing": true,
-          "clarifyTimeoutError": false
-        },
-        "transformRequest": [
-          null
-        ],
-        "transformResponse": [
-          null
-        ],
-        "timeout": 0,
-        "xsrfCookieName": "XSRF-TOKEN",
-        "xsrfHeaderName": "X-XSRF-TOKEN",
-        "maxContentLength": -1,
-        "maxBodyLength": -1,
-        "headers": {
-          "Accept": "application/json, text/plain, */*",
-          "User-Agent": "axios/0.23.0"
-        },
-        "baseURL": "http://localhost:5000",
-        "method": "get",
-        "url": "/room?dir=./bad/file/path"
-      },
-      "status": 404
-    }
-[1634807696373] [32mINFO[39m (33562 on ubuntu): [36mEntered: ./maze/room-0/room-1/room-0/room-1[39m
-[1634807696380] [32mINFO[39m (33562 on ubuntu): [36mOpened chest: maze/room-0/room-1/room-0/room-1/chest-1.json[39m
-[1634807696381] [31mERROR[39m (33562 on ubuntu): [36mCant open chest: maze/room-0/room-1/room-0/room-1/chest-2.nosj[39m
-    err: {
-      "type": "Error",
-      "message": "Cant open chest: maze/room-0/room-1/room-0/room-1/chest-2.nosj",
-      "stack":
-          Error: Cant open chest: maze/room-0/room-1/room-0/room-1/chest-2.nosj
-              at openChest (file:///home/noamgolani/cb4s/fileMaze/src/runner.js:27:11)
-              at processTicksAndRejections (internal/process/task_queues.js:95:5)
-    }
-[1634807696385] [32mINFO[39m (33562 on ubuntu): [36mEntered: ./maze/room-2/room-0/room-3[39m
-[1634807696388] [32mINFO[39m (33562 on ubuntu): [36mOpened chest: maze/room-2/room-0/room-3/chest-1.json[39m
-[1634807696395] [32mINFO[39m (33562 on ubuntu): [36mEntered: ./maze/room-2/room-0/room-2/room-3[39m
-[1634807696405] [32mINFO[39m (33562 on ubuntu): [36mOpened chest: maze/room-2/room-0/room-2/room-3/chest-1.json[39m
-[1634807696413] [32mINFO[39m (33562 on ubuntu): [36mEntered: ./maze/room-2/room-0/room-1[39m
-[1634807696418] [32mINFO[39m (33562 on ubuntu): [36mOpened chest: maze/room-2/room-0/room-1/chest-1.json[39m
-[1634807696419] [32mINFO[39m (33562 on ubuntu): [36mOpened chest: maze/room-2/room-0/room-1/chest-3.json[39m
-[1634807696421] [31mERROR[39m (33562 on ubuntu): [36mRequest failed with status code 404[39m
-    err: {
-      "message": "Request failed with status code 404",
-      "stack":
-          Error: Request failed with status code 404
-              at createError (/home/noamgolani/cb4s/fileMaze/node_modules/axios/lib/core/createError.js:16:15)
-              at settle (/home/noamgolani/cb4s/fileMaze/node_modules/axios/lib/core/settle.js:17:12)
-              at IncomingMessage.handleStreamEnd (/home/noamgolani/cb4s/fileMaze/node_modules/axios/lib/adapters/http.js:293:11)
-              at IncomingMessage.emit (events.js:412:35)
-              at endReadableNT (internal/streams/readable.js:1334:12)
-              at processTicksAndRejections (internal/process/task_queues.js:82:21)
-      "config": {
-        "transitional": {
-          "silentJSONParsing": true,
-          "forcedJSONParsing": true,
-          "clarifyTimeoutError": false
-        },
-        "transformRequest": [
-          null
-        ],
-        "transformResponse": [
-          null
-        ],
-        "timeout": 0,
-        "xsrfCookieName": "XSRF-TOKEN",
-        "xsrfHeaderName": "X-XSRF-TOKEN",
-        "maxContentLength": -1,
-        "maxBodyLength": -1,
-        "headers": {
-          "Accept": "application/json, text/plain, */*",
-          "User-Agent": "axios/0.23.0"
-        },
-        "baseURL": "http://localhost:5000",
-        "method": "get",
-        "url": "/room?dir=./bad/file/path"
-      },
-      "status": 404
-    }
-[1634807696424] [32mINFO[39m (33562 on ubuntu): [36mEntered: ./maze/room-2/room-0/room-0/room-0[39m
-[1634807696431] [32mINFO[39m (33562 on ubuntu): [36mOpened chest: maze/room-2/room-0/room-0/room-0/chest-1.json[39m
-[1634807696437] [32mINFO[39m (33562 on ubuntu): [36mEntered: ./maze/room-0/room-1[39m
-[1634807696441] [32mINFO[39m (33562 on ubuntu): [36mOpened chest: maze/room-0/room-1/chest-1.json[39m
-[1634807696444] [32mINFO[39m (33562 on ubuntu): [36mEntered: ./maze/room-0/room-1/room-0/room-0[39m
-[1634807696447] [32mINFO[39m (33562 on ubuntu): [36mOpened chest: maze/room-0/room-1/room-0/room-0/chest-1.json[39m
-[1634807696447] [32mINFO[39m (33562 on ubuntu): [36mFound: true at: maze/room-0/room-1/room-0/room-0/chest-1.json[39m
+[1634808014542] [32mINFO[39m (34216 on ubuntu): [36mEntered: /[39m
+[1634808014548] [32mINFO[39m (34216 on ubuntu): [36mOpened chest: /chest-1.json[39m
+[1634808014553] [32mINFO[39m (34216 on ubuntu): [36mEntered: ./maze/room-1/room-0/room-0[39m
+[1634808014561] [32mINFO[39m (34216 on ubuntu): [36mOpened chest: maze/room-1/room-0/room-0/chest-1.json[39m
+[1634808014563] [31mERROR[39m (34216 on ubuntu): [36mCant open chest: maze/room-1/room-0/room-0/chest-2.nosj[39m
+[1634808014572] [32mINFO[39m (34216 on ubuntu): [36mEntered: ./maze/room-3/room-0/room-1/room-0[39m
+[1634808014577] [32mINFO[39m (34216 on ubuntu): [36mOpened chest: maze/room-3/room-0/room-1/room-0/chest-1.json[39m
+[1634808014583] [32mINFO[39m (34216 on ubuntu): [36mEntered: ./maze/room-3/room-0/room-2/room-0[39m
+[1634808014591] [32mINFO[39m (34216 on ubuntu): [36mOpened chest: maze/room-3/room-0/room-2/room-0/chest-1.json[39m
+[1634808014592] [32mINFO[39m (34216 on ubuntu): [36mOpened chest: maze/room-3/room-0/room-2/room-0/chest-3.json[39m
+[1634808014597] [31mERROR[39m (34216 on ubuntu): [36m404: Cant find ./bad/file/path[39m
+[1634808014598] [32mINFO[39m (34216 on ubuntu): [36mEntered: ./maze/room-0/room-1/room-0/room-1[39m
+[1634808014602] [32mINFO[39m (34216 on ubuntu): [36mOpened chest: maze/room-0/room-1/room-0/room-1/chest-1.json[39m
+[1634808014604] [31mERROR[39m (34216 on ubuntu): [36mCant open chest: maze/room-0/room-1/room-0/room-1/chest-2.nosj[39m
+[1634808014607] [32mINFO[39m (34216 on ubuntu): [36mEntered: ./maze/room-2/room-0/room-3[39m
+[1634808014610] [32mINFO[39m (34216 on ubuntu): [36mOpened chest: maze/room-2/room-0/room-3/chest-1.json[39m
+[1634808014612] [32mINFO[39m (34216 on ubuntu): [36mEntered: ./maze/room-2/room-0/room-2/room-3[39m
+[1634808014614] [32mINFO[39m (34216 on ubuntu): [36mOpened chest: maze/room-2/room-0/room-2/room-3/chest-1.json[39m
+[1634808014618] [32mINFO[39m (34216 on ubuntu): [36mEntered: ./maze/room-2/room-0/room-1[39m
+[1634808014621] [32mINFO[39m (34216 on ubuntu): [36mOpened chest: maze/room-2/room-0/room-1/chest-1.json[39m
+[1634808014622] [32mINFO[39m (34216 on ubuntu): [36mOpened chest: maze/room-2/room-0/room-1/chest-3.json[39m
+[1634808014627] [31mERROR[39m (34216 on ubuntu): [36m404: Cant find ./bad/file/path[39m
+[1634808014627] [32mINFO[39m (34216 on ubuntu): [36mEntered: ./maze/room-2/room-0/room-0/room-0[39m
+[1634808014632] [32mINFO[39m (34216 on ubuntu): [36mOpened chest: maze/room-2/room-0/room-0/room-0/chest-1.json[39m
+[1634808014637] [32mINFO[39m (34216 on ubuntu): [36mEntered: ./maze/room-0/room-1[39m
+[1634808014640] [32mINFO[39m (34216 on ubuntu): [36mOpened chest: maze/room-0/room-1/chest-1.json[39m
+[1634808014642] [32mINFO[39m (34216 on ubuntu): [36mEntered: ./maze/room-0/room-1/room-0/room-0[39m
+[1634808014644] [32mINFO[39m (34216 on ubuntu): [36mOpened chest: maze/room-0/room-1/room-0/room-0/chest-1.json[39m
+[1634808014645] [32mINFO[39m (34216 on ubuntu): [36mFound: true at: maze/room-0/room-1/room-0/room-0/chest-1.json[39m
