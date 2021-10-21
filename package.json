@@ -11,9 +11,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "webpack": "^5.58.2",
     "axios": "^0.23.0",
-    "commander": "^8.2.0"
+    "commander": "^8.2.0",
+    "pino": "^7.0.3",
+    "pino-pretty": "^7.1.0",
+    "webpack": "^5.58.2"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
