@@ -18,6 +18,7 @@ export default async function roomHandler(req, res) {
       })),
     );
 
+    // filters the non files
     const onlyFiles = itemStats
       .filter((itemStat) => {
         if (itemStat.status === 'rejected') return false;

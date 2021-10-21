@@ -43,26 +43,10 @@ async function openChest(chestPath) {
 async function readMazeRoom(roomPath) {
   const response = await axios.get(`/room?dir=${roomPath}`);
   logger.log(`Entered: ${roomPath}`);
-  const filesOrDir = response.data.map((item) => path.join(roomPath, item));
-
-  // Get stats on all the room's items
-  const resList = await Promise.all(
-    filesOrDir.map(async (itemPath) => {
-      try {
-        const {
-          data: { isFile },
-        } = await axios.get(`/stat?dir=${itemPath}`);
-        if (isFile) return [true, itemPath];
-        return [false, itemPath];
-      } catch (err) {
-        logger.logError(err);
-      }
-    }),
-  );
+  const files = response.data.map((file) => path.join(roomPath, file));
 
   // Open all the files in the room
-  const chestPaths = resList.filter((res) => res[0]).map((res) => res[1]);
-  const chestContList = await Promise.allSettled(chestPaths.map(openChest));
+  const chestContList = await Promise.allSettled(files.map(openChest));
   // return { status: fulfilled/rejected , value: {} }
 
   // Process every good chest
