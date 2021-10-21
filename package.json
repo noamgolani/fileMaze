@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "startServer": "nodemon ./server/server.js",
-    "start": "node ./src/index.js run"
+    "start": "rm ./log.log && node ./src/index.js run && cat ./log.log"
   },
   "author": "",
   "license": "ISC",

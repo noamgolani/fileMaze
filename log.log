@@ -1,8 +1,8 @@
-[1634806189461] [32mINFO[39m (31919 on ubuntu): [36mEntered: /[39m
-[1634806189466] [32mINFO[39m (31919 on ubuntu): [36mOpened chest: /chest-1.json[39m
-[1634806189470] [32mINFO[39m (31919 on ubuntu): [36mEntered: ./maze/room-1/room-0/room-0[39m
-[1634806189473] [32mINFO[39m (31919 on ubuntu): [36mOpened chest: maze/room-1/room-0/room-0/chest-1.json[39m
-[1634806189474] [31mERROR[39m (31919 on ubuntu): [36mCant open chest: maze/room-1/room-0/room-0/chest-2.nosj[39m
+[1634806278078] [32mINFO[39m (32185 on ubuntu): [36mEntered: /[39m
+[1634806278084] [32mINFO[39m (32185 on ubuntu): [36mOpened chest: /chest-1.json[39m
+[1634806278089] [32mINFO[39m (32185 on ubuntu): [36mEntered: ./maze/room-1/room-0/room-0[39m
+[1634806278100] [32mINFO[39m (32185 on ubuntu): [36mOpened chest: maze/room-1/room-0/room-0/chest-1.json[39m
+[1634806278101] [31mERROR[39m (32185 on ubuntu): [36mCant open chest: maze/room-1/room-0/room-0/chest-2.nosj[39m
     err: {
       "type": "Error",
       "message": "Cant open chest: maze/room-1/room-0/room-0/chest-2.nosj",
@@ -11,12 +11,13 @@
               at openChest (file:///home/noamgolani/cb4s/fileMaze/src/runner.js:27:11)
               at processTicksAndRejections (internal/process/task_queues.js:95:5)
     }
-[1634806189479] [32mINFO[39m (31919 on ubuntu): [36mEntered: ./maze/room-3/room-0/room-1/room-0[39m
-[1634806189486] [32mINFO[39m (31919 on ubuntu): [36mOpened chest: maze/room-3/room-0/room-1/room-0/chest-1.json[39m
-[1634806189488] [32mINFO[39m (31919 on ubuntu): [36mEntered: ./maze/room-3/room-0/room-2/room-0[39m
-[1634806189491] [32mINFO[39m (31919 on ubuntu): [36mOpened chest: maze/room-3/room-0/room-2/room-0/chest-1.json[39m
-[1634806189492] [32mINFO[39m (31919 on ubuntu): [36mOpened chest: maze/room-3/room-0/room-2/room-0/chest-3.json[39m
-[1634806189497] [31mERROR[39m (31919 on ubuntu): [36mRequest failed with status code 400[39m
+[1634806278113] [32mINFO[39m (32185 on ubuntu): [36mEntered: ./maze/room-3/room-0/room-1/room-0[39m
+[1634806278120] [32mINFO[39m (32185 on ubuntu): [36mOpened chest: maze/room-3/room-0/room-1/room-0/chest-1.json[39m
+[1634806278127] [32mINFO[39m (32185 on ubuntu): [36mEntered: ./maze/room-3/room-0/room-2/room-0[39m
+[1634806278134] [32mINFO[39m (32185 on ubuntu): [36mOpened chest: maze/room-3/room-0/room-2/room-0/chest-1.json[39m
+[1634806278135] [32mINFO[39m (32185 on ubuntu): [36mOpened chest: maze/room-3/room-0/room-2/room-0/chest-3.json[39m
+[1634806278141] [32mINFO[39m (32185 on ubuntu): [36mEntered: ./maze/room-0/room-1/room-0/room-1[39m
+[1634806278145] [31mERROR[39m (32185 on ubuntu): [36mRequest failed with status code 400[39m
     err: {
       "message": "Request failed with status code 400",
       "stack":
@@ -54,9 +55,8 @@
       },
       "status": 400
     }
-[1634806189499] [32mINFO[39m (31919 on ubuntu): [36mEntered: ./maze/room-0/room-1/room-0/room-1[39m
-[1634806189503] [32mINFO[39m (31919 on ubuntu): [36mOpened chest: maze/room-0/room-1/room-0/room-1/chest-1.json[39m
-[1634806189504] [31mERROR[39m (31919 on ubuntu): [36mCant open chest: maze/room-0/room-1/room-0/room-1/chest-2.nosj[39m
+[1634806278149] [32mINFO[39m (32185 on ubuntu): [36mOpened chest: maze/room-0/room-1/room-0/room-1/chest-1.json[39m
+[1634806278150] [31mERROR[39m (32185 on ubuntu): [36mCant open chest: maze/room-0/room-1/room-0/room-1/chest-2.nosj[39m
     err: {
       "type": "Error",
       "message": "Cant open chest: maze/room-0/room-1/room-0/room-1/chest-2.nosj",
@@ -65,14 +65,14 @@
               at openChest (file:///home/noamgolani/cb4s/fileMaze/src/runner.js:27:11)
               at processTicksAndRejections (internal/process/task_queues.js:95:5)
     }
-[1634806189506] [32mINFO[39m (31919 on ubuntu): [36mEntered: ./maze/room-2/room-0/room-3[39m
-[1634806189508] [32mINFO[39m (31919 on ubuntu): [36mOpened chest: maze/room-2/room-0/room-3/chest-1.json[39m
-[1634806189513] [32mINFO[39m (31919 on ubuntu): [36mEntered: ./maze/room-2/room-0/room-2/room-3[39m
-[1634806189517] [32mINFO[39m (31919 on ubuntu): [36mOpened chest: maze/room-2/room-0/room-2/room-3/chest-1.json[39m
-[1634806189522] [32mINFO[39m (31919 on ubuntu): [36mEntered: ./maze/room-2/room-0/room-1[39m
-[1634806189528] [32mINFO[39m (31919 on ubuntu): [36mOpened chest: maze/room-2/room-0/room-1/chest-1.json[39m
-[1634806189528] [32mINFO[39m (31919 on ubuntu): [36mOpened chest: maze/room-2/room-0/room-1/chest-3.json[39m
-[1634806189533] [31mERROR[39m (31919 on ubuntu): [36mRequest failed with status code 400[39m
+[1634806278153] [32mINFO[39m (32185 on ubuntu): [36mEntered: ./maze/room-2/room-0/room-3[39m
+[1634806278156] [32mINFO[39m (32185 on ubuntu): [36mOpened chest: maze/room-2/room-0/room-3/chest-1.json[39m
+[1634806278160] [32mINFO[39m (32185 on ubuntu): [36mEntered: ./maze/room-2/room-0/room-2/room-3[39m
+[1634806278168] [32mINFO[39m (32185 on ubuntu): [36mOpened chest: maze/room-2/room-0/room-2/room-3/chest-1.json[39m
+[1634806278174] [32mINFO[39m (32185 on ubuntu): [36mEntered: ./maze/room-2/room-0/room-1[39m
+[1634806278177] [32mINFO[39m (32185 on ubuntu): [36mOpened chest: maze/room-2/room-0/room-1/chest-1.json[39m
+[1634806278178] [32mINFO[39m (32185 on ubuntu): [36mOpened chest: maze/room-2/room-0/room-1/chest-3.json[39m
+[1634806278181] [31mERROR[39m (32185 on ubuntu): [36mRequest failed with status code 400[39m
     err: {
       "message": "Request failed with status code 400",
       "stack":
@@ -110,10 +110,10 @@
       },
       "status": 400
     }
-[1634806189536] [32mINFO[39m (31919 on ubuntu): [36mEntered: ./maze/room-2/room-0/room-0/room-0[39m
-[1634806189550] [32mINFO[39m (31919 on ubuntu): [36mOpened chest: maze/room-2/room-0/room-0/room-0/chest-1.json[39m
-[1634806189554] [32mINFO[39m (31919 on ubuntu): [36mEntered: ./maze/room-0/room-1[39m
-[1634806189556] [32mINFO[39m (31919 on ubuntu): [36mOpened chest: maze/room-0/room-1/chest-1.json[39m
-[1634806189558] [32mINFO[39m (31919 on ubuntu): [36mEntered: ./maze/room-0/room-1/room-0/room-0[39m
-[1634806189560] [32mINFO[39m (31919 on ubuntu): [36mOpened chest: maze/room-0/room-1/room-0/room-0/chest-1.json[39m
-[1634806189560] [32mINFO[39m (31919 on ubuntu): [36mFound: true at: maze/room-0/room-1/room-0/room-0/chest-1.json[39m
+[1634806278182] [32mINFO[39m (32185 on ubuntu): [36mEntered: ./maze/room-2/room-0/room-0/room-0[39m
+[1634806278191] [32mINFO[39m (32185 on ubuntu): [36mOpened chest: maze/room-2/room-0/room-0/room-0/chest-1.json[39m
+[1634806278193] [32mINFO[39m (32185 on ubuntu): [36mEntered: ./maze/room-0/room-1[39m
+[1634806278196] [32mINFO[39m (32185 on ubuntu): [36mOpened chest: maze/room-0/room-1/chest-1.json[39m
+[1634806278200] [32mINFO[39m (32185 on ubuntu): [36mEntered: ./maze/room-0/room-1/room-0/room-0[39m
+[1634806278202] [32mINFO[39m (32185 on ubuntu): [36mOpened chest: maze/room-0/room-1/room-0/room-0/chest-1.json[39m
+[1634806278202] [32mINFO[39m (32185 on ubuntu): [36mFound: true at: maze/room-0/room-1/room-0/room-0/chest-1.json[39m
