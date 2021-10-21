@@ -10,7 +10,22 @@ export default async function roomHandler(req, res) {
   try {
     // TODO fix big securety problem
     const dirData = await fs.readdir(path.join(path.resolve('./maze'), dir));
-    return goodRes(res, dirData);
+
+    const itemStats = await Promise.allSettled(
+      dirData.map(async (itemPath) => ({
+        path: itemPath,
+        stat: await fs.lstat(path.join(path.resolve('./maze'), dir, itemPath)),
+      })),
+    );
+
+    const onlyFiles = itemStats
+      .filter((itemStat) => {
+        if (itemStat.status === 'rejected') return false;
+        return itemStat.value.stat.isFile();
+      })
+      .map((itemStat) => itemStat.value.path);
+
+    return goodRes(res, onlyFiles);
   } catch (err) {
     return badRes(res, err.message);
   }

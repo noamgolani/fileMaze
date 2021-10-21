@@ -67,16 +67,14 @@ async function readMazeRoom(roomPath) {
 
   // Process every good chest
   await Promise.all(
-    chestContList.map(async ({ status, value }) => {
-      if (status === 'rejected') return logger.logError(value);
-      const { found, content } = value;
-      try {
-        if (found)
-          return logger.log(`Found: ${content.content} at: ${content.path}`);
-        await readMazeRoom(content.next);
-      } catch (err) {
-        logger.logError(err);
-      }
+    chestContList.map((response) => {
+      if (response.status === 'rejected')
+        return logger.logError(response.reason);
+      const { found, content } = response.value;
+
+      if (found)
+        return logger.log(`Found: ${content.content} at: ${content.path}`);
+      readMazeRoom(content.next).catch((err) => logger.logError(err));
     }),
   );
 }
