@@ -1,5 +1,13 @@
 ## file maze
 
+### The rules
+
+- each folder is a "room"
+- each file is a "chest"
+- you can only open the chests in the room you are in
+- you can only go to a room you got from a clue (inside a chest) / starting clue
+
+
 A script for generating a file-maze
 
 ### maze example
